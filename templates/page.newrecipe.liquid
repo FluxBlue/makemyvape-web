@@ -1,0 +1,53 @@
+  <div align="center" id="col-main" class="container-fluid col-md-24 clearfix">
+    <div id="recipe-menu" class="row">
+      <div class="col-xs-24">
+        <h5>CATEGORIES</h5>
+      </div>
+      <div class="row">
+        <div class="col-xs-8">
+          <a href="http://makemyvape.co.uk/pages/recipes-fruit">
+            <h5>FRUIT</h5>
+            <img src="{{ 'fruit.jpg' | asset_url }}"/>
+          </a>
+        </div>
+        <div class="col-xs-8">
+          <a href="http://makemyvape.co.uk/pages/recipes-sweet">
+            <h5>SWEET</h5>
+            <img src="{{ 'sweet.jpg' | asset_url }}"/>
+          </a>
+        </div>
+        <div class="col-xs-8">
+          <a href="http://makemyvape.co.uk/pages/recipes-drinks">
+            <h5>DRINKS</h5>
+            <img src="{{ 'beverage.png' | asset_url }}"/>
+          </a>
+        </div>
+       </div>
+       <div class="row">
+        <div class="col-xs-8">
+          <a href="http://makemyvape.co.uk/pages/recipes-dessert">
+            <h5>DESSERT</h5>
+            <img src="{{ 'dessert.jpg' | asset_url }}"/>
+          </a>
+        </div>
+        <div class="col-xs-8">
+          <a href="http://makemyvape.co.uk/pages/recipes-mint-menthol">
+            <h5>MENTHOL</h5>
+            <img src="{{ 'menthol.jpg' | asset_url }}"/>
+          </a>
+        </div>
+        <div class="col-xs-8">
+          <a href="http://makemyvape.co.uk/pages/recipes-tobacco">
+            <h5>TOBACCO</h5>
+            <img src="{{ 'tobacco.jpg' | asset_url }}"/>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div id="recipe-content" class="col-md-24">
+        {{ page.content }}
+      </div>
+    </div>
+  </div>

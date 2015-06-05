@@ -1,0 +1,30 @@
+#recipe-menu{
+	background-color:#1099df;
+	color:white;
+	padding:10px;
+  	margin-bottom:10px;	
+}
+
+#recipe-menu div{
+	margin: auto;
+}
+
+#recipe-menu div div a{
+	color:white;
+	text-align: center;
+}
+
+#recipe-menu div div{
+	background-color:#0e7fb7;
+	box-sizing:border-box;
+	-moz-box-sizing:border-box;
+	-webkit-box-sizing:border-box;
+	border:3px solid #1099df;
+	max-height:20%;
+} 
+
+#recipe-menu div div a img{
+	padding-bottom:10px;
+	height:60px;
+	width:75px;
+}

@@ -1,0 +1,72 @@
+<DOCTYPE html>
+<html>
+
+  <head>
+
+  <title>Recipe Page</title>
+
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css" rel="stylesheet">
+
+  <link href="../assets/recipe.css" rel="stylesheet">
+
+  </head>
+
+  <body>
+
+  <div align="center" id="col-main" class="container-fluid col-md-12 clearfix">
+    <div id="recipe-menu" class="row">
+      <div class="col-xs-12">
+        <h5>CATEGORIES</h5>
+      </div>
+      <div class="row">
+        <div class="col-xs-2">
+          <a href="http://makemyvape.co.uk/pages/recipes-fruit">
+            <h5>FRUIT</h5>
+            <img src="{{ 'fruit.jpg' | asset_url }}"/>
+          </a>
+        </div>
+        <div class="col-xs-2">
+          <a href="http://makemyvape.co.uk/pages/recipes-sweet">
+            <h5>SWEET</h5>
+            <img src="{{ 'sweet.jpg' | asset_url }}"/>
+          </a>
+        </div>
+        <div class="col-xs-2">
+          <a href="http://makemyvape.co.uk/pages/recipes-drinks">
+            <h5>DRINKS</h5>
+            <img src="{{ 'beverage.jpg' | asset_url }}"/>
+          </a>
+        </div>
+        <div class="col-xs-2">
+          <a href="http://makemyvape.co.uk/pages/recipes-dessert">
+            <h5>DESSERT</h5>
+            <img src="{{ 'dessert.jpg' | asset_url }}"/>
+          </a>
+        </div>
+        <div class="col-xs-2">
+          <a href="http://makemyvape.co.uk/pages/recipes-mint-menthol">
+            <h5>MENTHOL</h5>
+            <img src="{{ 'menthol.jpg' | asset_url }}"/>
+          </a>
+        </div>
+        <div class="col-xs-2">
+          <a href="http://makemyvape.co.uk/pages/recipes-tobacco">
+            <h5>TOBACCO</h5>
+            <img src="{{ 'tobacco.jpg' | asset_url }}"/>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-12">
+        {{ page.content }}
+      </div>
+    </div>
+  </div>
+
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+
+  </body>
+
+</html>

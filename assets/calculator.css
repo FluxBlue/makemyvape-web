@@ -1,0 +1,22 @@
+body{
+	font-family: Verdana;
+	font-size: 12px;
+}
+
+h1, h2, h3, h4, h5{
+	font-weight: bold;
+	padding-bottom:20px;
+}
+
+.page-masthead{
+	padding: 20px;
+}
+
+#calc-body{
+	text-align:center;
+}
+
+#calc-body input{
+	padding:10px;
+	width:100%;
+}
