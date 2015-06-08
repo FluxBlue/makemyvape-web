@@ -25,28 +25,41 @@
 				<p>If you think our calculator can be improved, call or email us!</p>
 			</div>
 
-			<div id="calc-body" class="row">
+			<div align="center" id="calc-body" class="row">
 				<div id="calc-i" class="col-sm-6 well">
 					<form>
 
 						<h2>Calculator</h2>
 						<div class="form-group">
-							<p><label class="calc-label" for="calc-ratio">Base Ratio</label></p>
+							<p><label class="calc-label" for="calc-ratio">Base Ratio:</label></p>
 							<p><label>PG: <span id="calc-pg-percentage">50</span>% | VG: <span id="calc-vg-percentage">50</span>%</label></p>
 							<input id="calc-ratio" type="range" min="0" max="100" step="10" value="30"></input>
 						</div>
 						<div class="form-group">
-							<label class="calc-label" for="calc-amount">E-Liquid Amount (ml)</label>
+							<label class="calc-label" for="calc-amount">E-Liquid Amount: (ml)</label>
 							<input id="calc-amount" type="text" placeholder="10"></input>
 						</div>
-						<div id="calc-flavours" class="form-group">
-							<label class="calc-label" for="calc-flavour">Flavour 1</label>
-							<input id="calc-flavour" type="text" placeholder="Enter a delicious flavour!"></input>
-							<input type="button" class="btn btn-primary" value="Add another flavour" onClick="calcscript.addInput('dynamicInput');">
+						<div class="form-group">
+							<label class="calc-label" for="calc-amount">Nicotine Base Strength:</label>
+						    <select id="calc-base-strength">
+			     			    <option value="pg50">PG 50mg</option>
+				     		    <option value="pg72">PG 72mg</option>
+					   		    <option value="vg50">VG 50mg</option>
+					    	    <option value="vg72">VG 72mg</option>
+						    </select>	
 						</div>
 						<div class="form-group">
-							<label class="calc-label" for="calc-flavour3">Extra Dilutent (%)</label>
-							<input id="calc-flavour3" type="text" placeholder="Enter a delicious flavour!"></input>
+							<label class="calc-label" for="calc-amount">Desired Nicotine Strength: (mg)</label>
+							<input id="calc-desired-strength" type="text" placeholder="Enter 0 for none."></input>
+						</div>
+						<div id="calc-flavours" class="form-group">
+							<label class="calc-label" for="calc-flavour">Flavour 1: (%)</label>
+							<input id="calc-flavour" type="text" placeholder="Enter a delicious flavour!"></input>
+							<input type="button" class="btn btn-primary" value="Add another flavour" onClick="calcscript.addInput('calc-flavours');">
+						</div>
+						<div class="form-group">
+							<label class="calc-label" for="calc-dilutent">Extra Dilutent: (%)</label>
+							<input id="calc-dilutent" type="text" placeholder="Enter 0 if you don't know what this is!"></input>
 						</div>
 						<button type="submit" class="btn btn-primary">Calculate</button>
 					
@@ -54,6 +67,32 @@
 				</div>
 				<div id="calc-o" class="col-sm-6 well">
 					<h2>Results</h2>
+					<h4>Your Recipe</h4>
+					<div class="calc-r">
+						<label class="calc-r-label" for="calc-r-pg">PG:</label>
+						<p><span id="calc-r-pg">0</span> ml</p>
+						<p>Drops: <span id="calc-r-pg-drops">0</span></p>
+					</div class="calc-r">
+					<div class="calc-r">
+						<label class="calc-r-label" for="calc-r-vg">VG:</label>
+						<p><span id="calc-r-vg">0</span> ml</p>
+						<p>Drops: <span id="calc-r-vg-drops">0</span></p>			
+					</div>
+					<div class="calc-r">
+						<label class="calc-r-label" for="calc-r-nicotine">Nicotine:</label>
+						<p><span id="calc-r-nicotine">0</span> ml</p>
+						<p>Drops: <span id="calc-r-nicotine-drops">0</span></p>
+					</div>
+					<div class="calc-r">
+						<label class="calc-r-label" for="calc-r-flavour">Flavour 1:</label>
+						<p><span id="calc-r-flavour">0</span> ml</p>
+						<p>Drops: <span id="calc-r-flavour-drops">0</span></p>
+					</div>
+					<div class="calc-r">
+						<label class="calc-r-label" for="calc-r-dilutent">Dilutent:</label>
+						<p><span id="calc-r-dilutent">0</span> ml</p>
+						<p>Drops: <span id="calc-r-dilutent-drops">0</span></p>
+					</div>
 				</div>
 			</div>
 		

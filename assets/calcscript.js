@@ -4,6 +4,8 @@ var counter = 1;
 var limit = 5;
 
 $(document).ready(function(){
+	var r = $("#calc-ratio").attr(value);
+    var v = 100 - r;
 	$("#calc-pg-percentage").text('30');
     $("#calc-vg-percentage").html(v);
 });

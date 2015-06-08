@@ -1,9 +1,9 @@
-body{
-	font-family: Verdana;
+#calc-main{
+	font-family: Helvetica, Arial, sans-serif;
 	font-size: 12px;
 }
 
-h1, h2, h3, h4, h5{
+#calc-main h1, h2, h3, h4, h5{
 	font-weight: bold;
 	padding-bottom:20px;
 }
@@ -16,7 +16,23 @@ h1, h2, h3, h4, h5{
 	text-align:center;
 }
 
+#calc-i, #calc-o{
+	border:10px solid white;
+}
+
 #calc-body input{
 	padding:10px;
 	width:100%;
+}
+
+#calc-body select{
+	padding:10px;
+	width:100%;
+}
+
+#calc-o div{
+	background-color:#ffffff;
+	color:#1099df;
+	padding:10px;
+	margin:10px;
 }
