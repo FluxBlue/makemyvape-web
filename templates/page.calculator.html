@@ -11,94 +11,112 @@
 		<title>Make My Vape - Calculator</title>
 		<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css" rel="stylesheet">
 		<link rel="stylesheet" href="../assets/calculator.css"/>
-		<link rel="stylesheet" href="../assets/rangeslider.css"/>
 
 	</head>
 
 	<body>
 
 		<div id="calc-main" class="col-xs-12">
-
+			<div class="page-logo" align="center">
+			<img alt="Make My Vape Logo" src="../assets/logo.png"/>
+			</div>
 			<div align="center" class="page-masthead">
 				<h1>E-LIQUID CALCULATOR</h1>
-				<p>Make My Vape's e-liquid calculator is great for creating new recipes and perfect e-liquid mixes.</p>
-				<p>If you think our calculator can be improved, call or email us!</p>
+				<p>Make My Vape's e-liquid calculator is great for creating new recipes and perfect e-liquid mixes!</p>
 			</div>
 
 			<div align="center" id="calc-body" class="row">
 				<div id="calc-i" class="col-sm-6 well">
 					<form>
 
-						<h2>Calculator</h2>
+						<h2 class="calc-title">Calculator</h2>
 						<div class="form-group">
-							<p><label class="calc-label" for="calc-ratio">Base Ratio:</label></p>
-							<p><label>PG: <span id="calc-pg-percentage">50</span>% | VG: <span id="calc-vg-percentage">50</span>%</label></p>
-							<input id="calc-ratio" type="range" min="0" max="100" step="10" value="30"></input>
+							<p><label>PG <span id="calc-pg-percentage">50</span>% VG <span id="calc-vg-percentage">50</span>%</label></p>
+							<p>Adjust the slider below to get your preferred PG/VG ratio.</p>
+							<input id="calc-ratio" type="range" min="0" max="100" step="5" value="50"></input>
 						</div>
 						<div class="form-group">
 							<label class="calc-label" for="calc-amount">E-Liquid Amount: (ml)</label>
-							<input id="calc-amount" type="text" placeholder="10"></input>
+							<p>Enter the total amount of E-Liquid you want to create.</p>
+							<input id="calc-amount" min="0" type="number" placeholder="0"></input>
 						</div>
 						<div class="form-group">
-							<label class="calc-label" for="calc-amount">Nicotine Base Strength:</label>
-						    <select id="calc-base-strength">
-			     			    <option value="pg50">PG 50mg</option>
-				     		    <option value="pg72">PG 72mg</option>
-					   		    <option value="vg50">VG 50mg</option>
-					    	    <option value="vg72">VG 72mg</option>
-						    </select>	
+							<label class="calc-label" for="calc-amount">Nicotine Base Strength (mg):</label>
+							<p>Enter the strength of your nicotine base and select whether it is held in PG or VG. Alternatively, leave blank if you are not using nicotine.</p>
+							<p>HINT: Your bottle should tell you!</p>
+							<input id="calc-nic-strength" min="0" type="number" placeholder="0"></input>
+						    <select id="calc-nic-base">
+			     			    <option value="nic-pg">PG</option>
+				     		    <option value="nic-vg">VG</option>
+						    </select>
 						</div>
 						<div class="form-group">
 							<label class="calc-label" for="calc-amount">Desired Nicotine Strength: (mg)</label>
-							<input id="calc-desired-strength" type="text" placeholder="Enter 0 for none."></input>
+							<p>Enter how strong you would like the nicotine in your E-Liquid, in milligrams; unless you don't want any!</p>
+							<input id="calc-desired-strength" min="0" type="number" placeholder="0"></input>
 						</div>
 						<div id="calc-flavours" class="form-group">
-							<label class="calc-label" for="calc-flavour">Flavour 1: (%)</label>
-							<input id="calc-flavour" type="text" placeholder="Enter a delicious flavour!"></input>
-							<input type="button" class="btn btn-primary" value="Add another flavour" onClick="calcscript.addInput('calc-flavours');">
+							<label class="calc-label" for="calc-flavour">Flavours: (%)</label>
+							<p>Enter the percentage of liquid that should be flavoured. Usually anywhere from 10%-30% overall.</p>
+							<p>You can press 'Add another flavour' to add more flavours to your mix and experiment with your recipes.</p>
+							<p class="calc-italic">This calculator assumes all flavours are PG based!</p>
+							<div id="calc-flavour-div">
+								<p class="calc-flavour">Flavour 1</p>
+								<input id="calc-flavour-1" min="0" max="100" type="number" placeholder="0%"></input>
+							</div>
+							<button id="calc-addflavour" type="button" class="btn btn-primary">+</button>
+							<p id="calc-warn"></p>
 						</div>
 						<div class="form-group">
-							<label class="calc-label" for="calc-dilutent">Extra Dilutent: (%)</label>
-							<input id="calc-dilutent" type="text" placeholder="Enter 0 if you don't know what this is!"></input>
+							<label class="calc-label" for="calc-dilutent">Extra Diluent: (%)</label>
+							<p>If you want your E-Liquid to be diluted in a substance such as water or alcohol, you can add the percentage of that diluent here.</p>
+							<input id="calc-diluent" min="0" max="100" type="number" placeholder="0"></input>
 						</div>
-						<button type="submit" class="btn btn-primary">Calculate</button>
+						<button type="button" id="calc-button" class="btn btn-primary">Calculate</button>
+						<p id="calc-note">If you think our calculator can be improved, call or email us!</p>
+
 					
 					</form>
 				</div>
 				<div id="calc-o" class="col-sm-6 well">
-					<h2>Results</h2>
-					<h4>Your Recipe</h4>
+					<h2 class="calc-title">Your Recipe</h2>
 					<div class="calc-r">
+						<p id="calc-o-info">*1ml = 20 drops</p>
 						<label class="calc-r-label" for="calc-r-pg">PG:</label>
-						<p><span id="calc-r-pg">0</span> ml</p>
-						<p>Drops: <span id="calc-r-pg-drops">0</span></p>
+						<div id = "calc-pg-values">
+							<p><span id="calc-r-pg">0</span> ml</p>
+							<p>Drops: <span id="calc-r-pg-drops">0</span></p>
+						</div>
 					</div class="calc-r">
 					<div class="calc-r">
 						<label class="calc-r-label" for="calc-r-vg">VG:</label>
-						<p><span id="calc-r-vg">0</span> ml</p>
-						<p>Drops: <span id="calc-r-vg-drops">0</span></p>			
+						<div id ="calc-vg-values">
+							<p><span id="calc-r-vg">0</span> ml</p>
+							<p>Drops: <span id="calc-r-vg-drops">0</span></p>			
+						</div>
 					</div>
 					<div class="calc-r">
 						<label class="calc-r-label" for="calc-r-nicotine">Nicotine:</label>
 						<p><span id="calc-r-nicotine">0</span> ml</p>
 						<p>Drops: <span id="calc-r-nicotine-drops">0</span></p>
 					</div>
-					<div class="calc-r">
+					<div id="calc-r-flavour-div" class="calc-r">
 						<label class="calc-r-label" for="calc-r-flavour">Flavour 1:</label>
-						<p><span id="calc-r-flavour">0</span> ml</p>
-						<p>Drops: <span id="calc-r-flavour-drops">0</span></p>
+						<p><span id="calc-r-flavour-1">0</span> ml</p>
+						<p>Drops: <span id="calc-r-flavour-1-drops">0</span></p>
 					</div>
 					<div class="calc-r">
-						<label class="calc-r-label" for="calc-r-dilutent">Dilutent:</label>
-						<p><span id="calc-r-dilutent">0</span> ml</p>
-						<p>Drops: <span id="calc-r-dilutent-drops">0</span></p>
+						<label class="calc-r-label" for="calc-r-diluent">Diluent:</label>
+						<p><span id="calc-r-diluent">0</span> ml</p>
+						<p>Drops: <span id="calc-r-diluent-drops">0</span></p>
 					</div>
+					<img alt="Professor Vape - Calculator" src="../assets/provape-calc.png"/>
 				</div>
 			</div>
 		
 		</div>
 
-		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+		<script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/rangeslider.js/1.2.1/rangeslider.min.js"></script>
 		<script src="../assets/calcscript.js" type="text/javascript"></script>

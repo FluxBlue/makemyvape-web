@@ -10,6 +10,38 @@
 
 .page-masthead{
 	padding: 20px;
+	background-color:#1099df;
+	color:white;
+	display:block;
+}
+
+.page-logo{
+	background-color:#ffffff;
+	padding:20px;
+}
+
+.calc-title{
+	color:white;
+	background-color:#ee5c21;
+	padding-top:20px;
+}
+
+.calc-italic{
+  font-style: italic;
+}
+
+.calc-flavour{
+  font-size:14px;
+  color:white;
+  background-color:#1099df;
+  padding:10px;
+  margin-bottom:0px;
+}
+
+#calc-o-info{
+  color:white;
+  background-color:#ee5c21;
+  padding:10px;
 }
 
 #calc-body{
@@ -18,6 +50,18 @@
 
 #calc-i, #calc-o{
 	border:10px solid white;
+	background-color:#f4f4f4
+}
+
+#calc-o img{
+	height:30em;
+	background-color:#f4f4f4;
+}
+
+#calc-button, #calc-addflavour{
+	width:100%;
+	padding:10px;
+	font-weight: bold;
 }
 
 #calc-body input{
@@ -26,13 +70,138 @@
 }
 
 #calc-body select{
-	padding:10px;
 	width:100%;
+	padding:10px;
+}
+
+#calc-body label{
+	padding:10px;
+	color:white;
+	background-color:#1099df;
+	width:100%;
+	font-size:18px;
 }
 
 #calc-o div{
-	background-color:#ffffff;
-	color:#1099df;
+	background-color:#f4f4f4;
+	padding:5px;
+}
+
+#calc-o p{
+  font-size: 16px;
+  font-weight: bold;
+}
+
+#calc-vg-percentage, #calc-pg-percentage{
+	color:#f4f4f4;
+	background-color:#ee5c21;
+	border: 5px solid #ee5c21;
+	border-radius: 7px;
+}
+
+#calc-note{
 	padding:10px;
-	margin:10px;
+}
+
+#calc-main input[type=range] {
+  -webkit-appearance: none; /* Hides the slider so that custom slider can be made */
+  background-color:#f4f4f4;
+}
+
+#calc-main input[type=range]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  border: 3px solid #f4f4f4;
+  height: 36px;
+  width: 36px;
+  border-radius: 25px;
+  background: #ee5c21;
+  cursor: pointer;
+  margin-top: -14px; /* You need to specify a margin in Chrome, but in Firefox and IE it is automatic */
+  box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d; /* Add cool effects to your sliders! */
+}
+
+#calc-main input[type=range]::-moz-range-thumb {
+  box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+  border: 3px solid #f4f4f4;
+  height: 36px;
+  width: 36px;
+  border-radius: 25px;
+  background: #ee5c21;
+  cursor: pointer;
+}
+
+/* All the same stuff for IE */
+#calc-main input[type=range]::-ms-thumb {
+  box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+  border: 3px solid #f4f4f4;
+  height: 36px;
+  width: 36px;
+  border-radius: 25px;
+  background: #ee5c21;
+  cursor: pointer;
+}
+
+#calc-main input[type=range]:focus {
+  outline: none; /* Removes the blue border. You should probably do some kind of focus styling for accessibility reasons though. */
+}
+
+#calc-warn{
+	color: #1099df;
+	font-weight: bold;
+}
+
+#calc-main input[type=range]::-webkit-slider-runnable-track {
+  width: 100%;
+  height: 8.4px;
+  cursor: pointer;
+  box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+  background: #333333;
+  border-radius: 1.3px;
+  border: 0.2px solid #010101;
+}
+
+#calc-main input[type=range]:focus::-webkit-slider-runnable-track {
+  background: #333333;
+}
+
+#calc-main input[type=range]::-moz-range-track {
+  width: 100%;
+  height: 8.4px;
+  cursor: pointer;
+  box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+  background: #333333;
+  border-radius: 1.3px;
+  border: 0.2px solid #010101;
+}
+
+#calc-main input[type=range]::-ms-track {
+  width: 100%;
+  height: 8.4px;
+  cursor: pointer;
+  background: transparent;
+  border-color: transparent;
+  border-width: 16px 0;
+  color: transparent;
+}
+
+#calc-main input[type=range]::-ms-fill-lower {
+  background: #333333;
+  border: 0.2px solid #010101;
+  border-radius: 2.6px;
+  box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+}
+
+#calc-main input[type=range]:focus::-ms-fill-lower {
+  background: #333333;
+}
+
+#calc-main input[type=range]::-ms-fill-upper {
+  background: #333333;
+  border: 0.2px solid #010101;
+  border-radius: 2.6px;
+  box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+}
+
+#calc-main input[type=range]:focus::-ms-fill-upper {
+  background: #333333;
 }
